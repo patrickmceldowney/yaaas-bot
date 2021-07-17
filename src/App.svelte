@@ -1,22 +1,31 @@
 <script>
-	import browser from 'webextension-polyfill';
+  import browser from 'webextension-polyfill';
+  import LiquidButton from './components/LiquidButton/LiquidButton.svelte';
 
-	let image = 'https://fanart.tv/fanart/tv/275557/hdtvlogo/broad-city-5341ed4f4ff19.png';
-
-	function change() {
-		browser.storage.local.set({ background: image });
-	}
+  let image = 'images/broad-city-logo-5.png';
 </script>
 
-<div class="image-container">
-	<img src="images/broad-city.gif" alt="yaaaas">
+<div class="container">
+  <img src="images/broad-city.gif" alt="yaaaas" class="yaaas" />
+  <LiquidButton
+    on:liquidClick={() => {
+      browser.storage.local.set({ background: image });
+    }}
+  />
 </div>
 
-
 <style>
-	.image-container {
-		display: flex;
-		align-content: center;
-		justify-content: center;
-	}
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 500px;
+    width: 500px;
+  }
+
+  .container .yaaas {
+    width: 65%;
+    height: 65%;
+  }
 </style>

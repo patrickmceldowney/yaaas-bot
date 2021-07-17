@@ -1,0 +1,15 @@
+html,
+body {
+  width: 500px;
+  height: 500px;
+  position: relative;
+  border-radius: 8px;
+}
+
+body {
+  margin: 0;
+  background-color: #ffc9e7;
+  color: #333;
+  box-sizing: border-box;
+  font-family: 'Fredoka One', cursive;
+}
