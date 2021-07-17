@@ -25,7 +25,7 @@
   }
 
   .container .yaaas {
-    width: 65%;
-    height: 65%;
+    width: 70%;
+    height: auto;
   }
 </style>
