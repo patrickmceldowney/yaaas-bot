@@ -43,6 +43,7 @@
     relMouseX = mouseX - parentCanvas.offset().left;
     relMouseY = mouseY - parentCanvas.offset().top;
   }
+  jQuery(document).on('mousemove', mouseDirection);
 
   /**
    * Get mouse speed
@@ -282,7 +283,6 @@
   };
 
   onMount(async () => {
-    jQuery(document).on('mousemove', mouseDirection);
     initButton();
   });
 </script>
