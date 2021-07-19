@@ -3,12 +3,11 @@
   import jQuery from 'jquery';
 
   // button animation shit
-  var pointsA = [],
+  let pointsA = [],
     pointsB = [],
     parentCanvas = null,
     canvas = null,
     context = null,
-    vars = null,
     points = 8,
     viscosity = 20,
     mouseDist = 70,
@@ -278,7 +277,7 @@
 
   const dispatch = createEventDispatcher();
 
-  const change = () => {
+  const quote = () => {
     dispatch('liquidClick');
   };
 
@@ -287,7 +286,7 @@
   });
 </script>
 
-<div class="btn-liquid" on:click={change}>
+<div class="btn-liquid" on:click={quote}>
   <span class="inner">Bwahhh</span>
 </div>
 
