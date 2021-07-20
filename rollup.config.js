@@ -92,11 +92,11 @@ export default [
     },
   },
   {
-    input: 'src/background.js',
+    input: 'src/service-worker.js',
     output: {
       sourcemap: true,
       format: 'iife',
-      file: 'public/build/background.js',
+      file: 'public/build/service-worker.js',
     },
     plugins: [resolve(), commonjs()],
     watch: {

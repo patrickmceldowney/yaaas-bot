@@ -1,9 +1,10 @@
 {
   "name": "Yaaas Bot",
-  "version": "1.0",
+  "version": "0.0.0.1",
+  "manifest_version": 3,
   "description": "The only extension you don't need",
   "permissions": ["storage"],
-  "browser_action": {
+  "action": {
     "default_popup": "popup.html",
     "default_icon": {
       "16": "images/broad-city-logo-5.png",
@@ -17,7 +18,6 @@
     "48": "images/broad-city-logo-5.png",
     "128": "images/broad-city-logo-5.png"
   },
-  "manifest_version": 2,
   "content_scripts": [
     {
       "matches": ["https://*/*"],
