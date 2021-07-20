@@ -282,7 +282,9 @@
   };
 
   onMount(async () => {
-    initButton();
+    setTimeout(() => {
+      initButton();
+    }, 500);
   });
 </script>
 

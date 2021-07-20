@@ -7,16 +7,16 @@
   "action": {
     "default_popup": "popup.html",
     "default_icon": {
-      "16": "images/broad-city-logo-5.png",
-      "24": "images/broad-city-logo-5.png",
-      "32": "images/broad-city-logo-5.png"
+      "16": "images/broad-city-logo.png",
+      "24": "images/broad-city-logo.png",
+      "32": "images/broad-city-logo.png"
     }
   },
   "icons": {
-    "16": "images/broad-city-logo-5.png",
-    "32": "images/broad-city-logo-5.png",
-    "48": "images/broad-city-logo-5.png",
-    "128": "images/broad-city-logo-5.png"
+    "16": "images/broad-city-logo.png",
+    "32": "images/broad-city-logo.png",
+    "48": "images/broad-city-logo.png",
+    "128": "images/broad-city-logo.png"
   },
   "content_scripts": [
     {
