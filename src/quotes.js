@@ -22,4 +22,6 @@ export const quotes = [
   "Ilana: 'Abbi, why wouldn't we be rating them on dick size? It's all I can see. Those b-ball shorts are God's gift. If you train your eyes, you can see their religion.",
   "Ilana: 'Nose, vagina, butthole. If God didn't want us to put our fingers in there, then why did he make them perfectly finger-sized?'",
   "Ilana: 'Do you ever get hair from your head stuck in buttcrack in the shower?'",
+  "Ilana: I finally figured out my eyebrows, they're sisters, not twins.",
+  "Abbi: 'What's an Arch de Triumph?'\nIlana: 'It's when two dudes go down on us, is how I picture it, and they're butt to butt and then you and I do Oprah hands.",
 ];
