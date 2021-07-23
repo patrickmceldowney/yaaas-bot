@@ -1,5 +1,5 @@
 <script>
-  import { createEventDispatcher, onMount, tick } from 'svelte';
+  import { createEventDispatcher, onMount } from 'svelte';
   import jQuery from 'jquery';
 
   // button animation shit
@@ -42,7 +42,6 @@
     relMouseX = mouseX - parentCanvas.offset().left;
     relMouseY = mouseY - parentCanvas.offset().top;
   }
-  jQuery(document).on('mousemove', mouseDirection);
 
   /**
    * Get mouse speed
@@ -212,7 +211,7 @@
       let points = groups[j];
 
       if (j == 0) {
-        // Background style
+        // Backgbround style
         context.fillStyle = '#2cc941';
       } else {
         // Foreground style
@@ -288,7 +287,7 @@
   });
 </script>
 
-<div class="btn-liquid" on:click={quote}>
+<div class="btn-liquid" on:click={quote} on:mousemove={mouseDirection}>
   <span class="inner">Bwahhh</span>
 </div>
 
