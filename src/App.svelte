@@ -1,13 +1,36 @@
 <script>
-  import { onMount } from 'svelte';
+  import { onMount, onDestroy } from 'svelte';
   import LiquidButton from './components/LiquidButton/LiquidButton.svelte';
   import jQuery from 'jquery';
   import { quotes } from './quotes';
 
-  let loaded = false;
+  let loaded = false,
+    alreadyShown = [];
+
+  const getRandomQuote = () => {
+    if (!alreadyShown.length) {
+      for (let i = 0; i < quotes.length; i++) {
+        alreadyShown.push(i);
+      }
+    }
+
+    // Generate random number within the range of length of alreadyShown array.
+    let randomIndex = Math.floor(Math.random() * alreadyShown.length);
+
+    // Get unaccessed index of quotes using randomIndex
+    let indexOfItem = alreadyShown[randomIndex];
+
+    // remove this index from alreadyShown array
+    alreadyShown.splice(randomIndex, 1);
+    return quotes[indexOfItem];
+  };
 
   onMount(() => {
     loaded = true;
+  });
+
+  onDestroy(() => {
+    alreadyShown = [];
   });
 </script>
 
@@ -16,7 +39,7 @@
     <img src="images/broad-city.gif" alt="yaaaas" class="yaaas" />
     <LiquidButton
       on:liquidClick={() => {
-        let ran = quotes[Math.floor(Math.random() * quotes.length)];
+        let ran = getRandomQuote();
         jQuery('.random-quote').html(ran);
       }}
     />
