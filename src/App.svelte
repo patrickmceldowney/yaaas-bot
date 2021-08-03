@@ -5,7 +5,11 @@
   import { quotes } from './quotes';
 
   let loaded = false,
-    alreadyShown = [];
+    alreadyShown = [],
+    name = '',
+    text = '',
+    replies = [],
+    quoteRetrieved = false;
 
   const getRandomQuote = () => {
     if (!alreadyShown.length) {
@@ -40,10 +44,28 @@
     <LiquidButton
       on:liquidClick={() => {
         let ran = getRandomQuote();
-        jQuery('.random-quote').html(ran);
+        name = ran.name;
+        text = ran.text;
+        replies = ran.replies;
+        quoteRetrieved = true;
       }}
     />
-    <h2 class="random-quote">Smack that button for quotes!</h2>
+    <div class="quote-wrapper">
+      {#if !quoteRetrieved}
+        <h2 class="random-quote">Smack that button for quotes!</h2>
+      {:else}
+        <h2 class="random-quote">
+          <span class="author">{name}:</span>
+          {text}
+        </h2>
+        {#each replies as reply}
+          <h2 class="random-quote">
+            <span class="author">{reply.name}:</span>
+            {reply.text}
+          </h2>
+        {/each}
+      {/if}
+    </div>
   </div>
 {/if}
 
@@ -63,10 +85,29 @@
     height: auto;
   }
 
-  .container .random-quote {
-    margin-top: 60px;
+  .container .quote-wrapper {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 10px;
+    border-radius: 8px;
+    margin: 60px 0;
+    background: rgb(44, 201, 65);
+    background: radial-gradient(
+      circle,
+      rgba(44, 201, 65, 1) 0%,
+      rgba(17, 150, 209, 1) 60%,
+      rgba(255, 75, 178, 1) 100%
+    );
+  }
+
+  .quote-wrapper .random-quote {
+    margin: 0;
     color: #fff;
-    white-space: pre-wrap;
     font-weight: 400;
+  }
+
+  .author {
+    color: #2cc941;
   }
 </style>
